@@ -8,6 +8,8 @@ services:
       SA_PASSWORD: "HacerDevelopment2019"
       ACCEPT_EULA: "Y"
   api-server:
+    depends_on:
+      - db
     image: node:10.16-buster
     ports:
       - "10001:8080"
@@ -17,3 +19,4 @@ services:
         target: /opt/hacer/
     stdin_open: true
     tty: true
+    entrypoint: bash -c "cd /opt/hacer/api-server-nodejs && npm install && npm start"
