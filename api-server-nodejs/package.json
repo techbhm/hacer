@@ -2,11 +2,16 @@
   "name": "api-server-nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
-  "license": "LGPL3"
+  "license": "LGPL3",
+  "dependencies": {
+    "express": "^4.17.1",
+    "tedious": "^6.4.0"
+  }
 }
