@@ -7,9 +7,14 @@ var request = require('tedious').Request;
 app.get('/', function (req, res) {
     //set up the connection information
     var config = {
-        userName: 'sa',
-        password: 'HacerDevelopment2019',
-        server: 'api-server',
+        server: 'db',
+        authentication: {
+            type: 'default',
+            options: {
+                userName: 'sa',
+                password: 'HacerDevelopment2019',
+            }
+        },
         options: {
             database: 'hacer',
             port: 10000

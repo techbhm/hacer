@@ -1,14 +1,18 @@
 version: "3.7"
 services:
   db:
+    container_name: db
     image: mcr.microsoft.com/mssql/server:2019-RC1-ubuntu
     ports:
       - "10000:1433"
     environment:
       SA_PASSWORD: "HacerDevelopment2019"
       ACCEPT_EULA: "Y"
-  api-server:
+  apiserver:
+    container_name: api_server
     depends_on:
+      - db
+    links:
       - db
     image: node:10.16-buster
     ports:
